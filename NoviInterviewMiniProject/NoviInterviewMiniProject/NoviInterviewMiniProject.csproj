@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.4.8.3\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.4.8.3\build\Microsoft.TypeScript.MSBuild.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +27,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -162,6 +165,11 @@
     <Compile Include="Services\GlobalSettings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\.gitignore" />
+    <Content Include="Client\karma.conf.js" />
+    <Content Include="Client\src\app\app.component.html" />
+    <Content Include="Client\src\favicon.ico" />
+    <Content Include="Client\src\index.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -172,6 +180,76 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Client\.browserslistrc" />
+    <Content Include="Client\.editorconfig" />
+    <Content Include="Client\.git\COMMIT_EDITMSG" />
+    <Content Include="Client\.git\config" />
+    <Content Include="Client\.git\description" />
+    <Content Include="Client\.git\HEAD" />
+    <Content Include="Client\.git\hooks\applypatch-msg.sample" />
+    <Content Include="Client\.git\hooks\commit-msg.sample" />
+    <Content Include="Client\.git\hooks\fsmonitor-watchman.sample" />
+    <Content Include="Client\.git\hooks\post-update.sample" />
+    <Content Include="Client\.git\hooks\pre-applypatch.sample" />
+    <Content Include="Client\.git\hooks\pre-commit.sample" />
+    <Content Include="Client\.git\hooks\pre-merge-commit.sample" />
+    <Content Include="Client\.git\hooks\pre-push.sample" />
+    <Content Include="Client\.git\hooks\pre-rebase.sample" />
+    <Content Include="Client\.git\hooks\pre-receive.sample" />
+    <Content Include="Client\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="Client\.git\hooks\push-to-checkout.sample" />
+    <Content Include="Client\.git\hooks\update.sample" />
+    <Content Include="Client\.git\index" />
+    <Content Include="Client\.git\info\exclude" />
+    <Content Include="Client\.git\logs\HEAD" />
+    <Content Include="Client\.git\logs\refs\heads\master" />
+    <Content Include="Client\.git\objects\02\972627f8df364102ce4ede71c8bd5f3660e1d8" />
+    <Content Include="Client\.git\objects\07\11527ef9d5c117396e6c03290a76658e6384ed" />
+    <Content Include="Client\.git\objects\09\2345b02e807773164dba19f2b4d1f4ab869f67" />
+    <Content Include="Client\.git\objects\2a\0fbf18f85102cf57069c7da940f6a0d4de6101" />
+    <Content Include="Client\.git\objects\36\12073bc31cd4c1f5d6cbb00318521e9a61bd8a" />
+    <Content Include="Client\.git\objects\36\1df5b18f3cd611c9d2f711b000b451545668f2" />
+    <Content Include="Client\.git\objects\3b\06677a4b28b08f5bf22569b1d0dabe9bf9850b" />
+    <Content Include="Client\.git\objects\41\79544841860671c51eed87a3aad8fbcd4b953a" />
+    <Content Include="Client\.git\objects\42\9bb9ef2d3400363c014fa434775b0f482f6bea" />
+    <Content Include="Client\.git\objects\49\8bdba41e1b6ba9aef495585e7c04cde52f7371" />
+    <Content Include="Client\.git\objects\4f\9ac26980c156a3d525267010d5f78144b43519" />
+    <Content Include="Client\.git\objects\50\af5f4b4192fcf2df949b04c7aaf18e4be4857a" />
+    <Content Include="Client\.git\objects\52\9975e2921d033fcf89e0e94e48c53f8f41b2e2" />
+    <Content Include="Client\.git\objects\57\2a53f73bb332280d19f2f7cb0bcac8b32faab5" />
+    <Content Include="Client\.git\objects\58\25478d74b5576b0f8330bdf5179b3ec6503fb8" />
+    <Content Include="Client\.git\objects\59\d9a3a3e73ffc640517ef488f6f89d6270195d1" />
+    <Content Include="Client\.git\objects\74\0e35a0c04be4a5fe627833b54fee2ad99dc2a3" />
+    <Content Include="Client\.git\objects\77\b374577de83b86d846eadda2dd17532d7dabaa" />
+    <Content Include="Client\.git\objects\82\d91dc4a4de57f380b66c59cdd16ff6cd5798e4" />
+    <Content Include="Client\.git\objects\86\36411250ed612ef77f3aa06c39652f40483f09" />
+    <Content Include="Client\.git\objects\90\d4ee0072ce3fc41812f8af910219f9eea3c3de" />
+    <Content Include="Client\.git\objects\99\7406ad22c29aae95893fb3d666c30258a09537" />
+    <Content Include="Client\.git\objects\a2\98b5bd8796ac377fe9ed64caa249e24c7ec3b6" />
+    <Content Include="Client\.git\objects\b1\c6c96a9de8f091f39b3b8feb7e29cfcfb1ed81" />
+    <Content Include="Client\.git\objects\b7\5e660f7031f7bd6a95bab9ff455d2e87085994" />
+    <Content Include="Client\.git\objects\bc\9e4d772d21122c4d768dbf163920fa1ed59c0b" />
+    <Content Include="Client\.git\objects\c0\4c876075f97ff17aa630fc0f540f5d58235f37" />
+    <Content Include="Client\.git\objects\c7\b673cf44b388e9989fe908b78d7d73cd2e1409" />
+    <Content Include="Client\.git\objects\cf\b3f17409bc472d929f033023683e0d12e9ff1f" />
+    <Content Include="Client\.git\objects\d5\64d0bc3dd917926892c55e3706cc116d5b165e" />
+    <Content Include="Client\.git\objects\e6\66c14b1fdf8b9cbb719db6ed6046d2e9e370ef" />
+    <Content Include="Client\.git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391" />
+    <Content Include="Client\.git\objects\f5\6ff47022c7a46eac3aee615d6d9150338524dc" />
+    <Content Include="Client\.git\objects\ff\06eae10c542e0ecce4498ce0caef544483f0af" />
+    <Content Include="Client\.git\refs\heads\master" />
+    <Content Include="Client\.vscode\extensions.json" />
+    <Content Include="Client\.vscode\launch.json" />
+    <Content Include="Client\.vscode\tasks.json" />
+    <Content Include="Client\angular.json" />
+    <Content Include="Client\package.json" />
+    <Content Include="Client\README.md" />
+    <Content Include="Client\src\app\app.component.scss" />
+    <Content Include="Client\src\assets\.gitkeep" />
+    <Content Include="Client\src\styles.scss" />
+    <Content Include="Client\tsconfig.app.json" />
+    <Content Include="Client\tsconfig.json" />
+    <Content Include="Client\tsconfig.spec.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -194,11 +272,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Client\.git\objects\info\" />
+    <Folder Include="Client\.git\objects\pack\" />
+    <Folder Include="Client\.git\refs\tags\" />
     <Folder Include="Models\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
@@ -215,11 +295,26 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Client\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="Client\src\app\app.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\app.module.ts" />
+    <TypeScriptCompile Include="Client\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="Client\src\environments\environment.ts" />
+    <TypeScriptCompile Include="Client\src\main.ts" />
+    <TypeScriptCompile Include="Client\src\polyfills.ts" />
+    <TypeScriptCompile Include="Client\src\test.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
@@ -248,7 +343,17 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.4.8.3\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.4.8.3\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.4.8.3\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.4.8.3\build\Microsoft.TypeScript.MSBuild.targets'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.4.8.3\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.4.8.3\build\Microsoft.TypeScript.MSBuild.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>if $(ConfigurationName) == Debug (
+    npm run build --prefix $(ProjectDir)\Client
+) ELSE (
+    npm run prod --prefix $(ProjectDir)\Client
+)</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
