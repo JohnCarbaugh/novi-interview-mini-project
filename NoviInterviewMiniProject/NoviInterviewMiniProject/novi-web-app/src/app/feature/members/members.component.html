@@ -1,0 +1,53 @@
+<mat-card class="members-grid-card">
+    <table mat-table [dataSource]="dataSource" matSort #autosize>
+
+        <ng-container matColumnDef="Name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <mat-form-field appearance="standard">
+                    <mat-label>Name</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. 'David'" #input>
+                </mat-form-field>
+            </th>
+            <td mat-cell *matCellDef="let row"> {{row.Name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="MemberStatus">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Member Status </th>
+            <td mat-cell *matCellDef="let row"> {{row.MemberStatus}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="FirstName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.FirstName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="LastName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.LastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="CustomerType">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Type </th>
+            <td mat-cell *matCellDef="let row"> {{row.CustomerType}} </td>
+            </ng-container>
+
+        <ng-container matColumnDef="Email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+            <td mat-cell *matCellDef="let row"> {{row.Email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Phone">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+            <td mat-cell *matCellDef="let row"> {{row.Phone}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Mobile">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Mobile </th>
+            <td mat-cell *matCellDef="let row"> {{row.Mobile}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row @rowsAnimation *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</mat-card>
