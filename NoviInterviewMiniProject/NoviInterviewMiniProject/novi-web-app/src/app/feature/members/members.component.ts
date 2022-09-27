@@ -16,9 +16,20 @@ import { MatSort } from '@angular/material/sort';
 export class MembersComponent implements OnInit {
 
   public dataSource: MatTableDataSource<NoviMember> = new MatTableDataSource();
-  public displayedColumns: string[] = ['Name','MemberStatus','FirstName','LastName','CustomerType','Email','Phone','Mobile'];
+  public displayedColumns: string[] = [
+    'Name',
+    'MemberStatus',
+    'FirstName',
+    'LastName',
+    'CustomerType',
+    'Email',
+    'Phone',
+    'Mobile'
+  ];
+  public isLoading = false;
+  public nameFilter = new FormControl('', [Validators.required]);
 
-  nameFilter = new FormControl('', [Validators.required]);
+
 
   constructor(private noviService: NoviService) { }
 
@@ -34,10 +45,12 @@ export class MembersComponent implements OnInit {
   }
 
   private getMemberList() {
+    this.isLoading = true;
     this.noviService.requestMemberList()
     .subscribe({
       next: data => {
         this.setGridDisplay(data?.Results)
+        this.isLoading = false;
       }
     });
   }

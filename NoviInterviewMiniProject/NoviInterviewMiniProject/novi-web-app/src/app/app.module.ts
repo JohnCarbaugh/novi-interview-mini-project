@@ -16,7 +16,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatButtonModule,
     MatInputModule,
     MatListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatMenuModule
   ],
   providers: [
     NoviService

@@ -1,9 +1,9 @@
-<mat-toolbar color="primary" class="example-toolbar">
+<mat-toolbar color="primary">
 	<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
-	<h1 class="example-app-name">Novi AMS</h1>
+	<h1>Novi Web App</h1>
 </mat-toolbar>
 <mat-sidenav-container autosize>
-	<mat-sidenav #sidenav mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+	<mat-sidenav #sidenav mode="side" opened="true">
 		<mat-nav-list>
 			<mat-list-item routerLink="/members" (click)="showSubmenu = !showSubmenu">
 				<span class="full-width" *ngIf="isExpanded" >Members</span>

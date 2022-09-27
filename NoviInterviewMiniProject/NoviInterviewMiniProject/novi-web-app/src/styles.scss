@@ -1,11 +1,70 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// Theme Overrides
+// Import library functions for theme creation.
+@import '@angular/material/theming';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+$my-palette: (
+  50 : #e3eff9,
+  100 : #b8d6f0,
+  200 : #89bbe7,
+  300 : #599fdd,
+  400 : #368bd5,
+  500 : #1276ce,
+  600 : #106ec9,
+  700 : #0d63c2,
+  800 : #0a59bc,
+  900 : #0546b0,
+  A100 : #dbe6ff,
+  A200 : #a8c4ff,
+  A400 : #75a1ff,
+  A700 : #5b90ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+// Define your application's custom theme.
+$primary: mat-palette($my-palette);
+$accent: mat-palette($mat-indigo, A200, A100, A400);
+
+.dark-theme {
+    $theme: mat-dark-theme($primary, $accent);
+    background: #303030;
+    color: white;
+
+    @include angular-material-theme($theme);
+}
+
 body {
     margin: 0;
     height: 0;
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .flex-row {display: flex; flex-direction: row;}
 .flex-row {display: flex; flex-direction: column;}
+
+::webkit-scrollbar-thumb {
+    background-color: #303b42;
+    border-radius: 6px;
+}
+ 

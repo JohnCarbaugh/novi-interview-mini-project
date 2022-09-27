@@ -1,5 +1,5 @@
 enum MemberStatus {
-    "non_member" = "Non-Member",
+    "non_member" = "person",
     "prospect" = "Prospect",
     "pending" = "Pending",
     "current" = "Current",

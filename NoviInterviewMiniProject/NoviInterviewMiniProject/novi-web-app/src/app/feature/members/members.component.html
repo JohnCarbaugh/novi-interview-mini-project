@@ -1,6 +1,6 @@
 <mat-card class="members-grid-card">
     <table mat-table [dataSource]="dataSource" matSort #autosize>
-
+        
         <ng-container matColumnDef="Name">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>
                 <mat-form-field appearance="standard">
@@ -49,5 +49,5 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
         <tr mat-row @rowsAnimation *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
 </mat-card>

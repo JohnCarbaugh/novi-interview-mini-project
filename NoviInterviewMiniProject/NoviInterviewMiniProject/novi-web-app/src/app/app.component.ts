@@ -7,24 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
 
-  isExpanded = true;
+  isExpanded = false;
   showSubmenu: boolean = false;
   isShowing = false;
 
-  constructor () {}
-
-  public mouseenter() {
-    console.log('mouseenter');
-    if (!this.isExpanded) {
-      this.isShowing = true;
-    }
+  constructor() {
+    this.setTheme();
   }
 
-  public mouseleave() {
-    console.log('mouseenter');
-    if (!this.isExpanded) {
-      this.isShowing = false;
-    }
+  private setTheme() {
+    const darkClass = 'dark-theme';
+    document.body.classList.add(darkClass);
   }
 
 }

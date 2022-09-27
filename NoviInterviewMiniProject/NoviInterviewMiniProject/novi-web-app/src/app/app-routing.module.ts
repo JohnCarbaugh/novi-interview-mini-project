@@ -5,7 +5,8 @@ import { MembersComponent } from './feature/members/members.component';
 
 const routes: Routes = [
   { path: 'members', component: MembersComponent },
-  { path: 'events', component: EventsComponent }
+  { path: 'events', component: EventsComponent },
+  { path: '', redirectTo: 'members', pathMatch: 'full'}
 ];
 
 @NgModule({
