@@ -57,16 +57,11 @@ export class MembersComponent implements OnInit {
 
   private setGridDisplay(data: NoviMember[]) {
     this.dataSource = new MatTableDataSource(data);
-    console.log("data");
-    for( let i = 0; i < data.length; i++) {
-      console.log(data[i].Active);
-    }
     this.setGridFilterPredicate();
   }
 
   private setGridFilterPredicate() {
     this.dataSource.filterPredicate = function(data: NoviMember, filter: string): boolean {
-      console.log(filter);
       return data.Name.toLowerCase().includes(filter);
     };
   }
