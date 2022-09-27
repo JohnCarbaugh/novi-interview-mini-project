@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+	<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+	<h1>Novi Web App</h1>
+</mat-toolbar>
+<mat-sidenav-container autosize>
+	<mat-sidenav #sidenav mode="side" opened="true">
+		<mat-nav-list>
+			<mat-list-item routerLink="/members" (click)="showSubmenu = !showSubmenu">
+				<span class="full-width" *ngIf="isExpanded" >Members</span>
+				<mat-icon mat-list-icon>people</mat-icon>
+			</mat-list-item>
+      <mat-list-item routerLink="/events" (click)="showSubmenu = !showSubmenu">
+				<span class="full-width" *ngIf="isExpanded" >Events</span>
+				<mat-icon mat-list-icon>event</mat-icon>
+			</mat-list-item>
+		</mat-nav-list>
+  </mat-sidenav>
+	<router-outlet></router-outlet>
+</mat-sidenav-container>
